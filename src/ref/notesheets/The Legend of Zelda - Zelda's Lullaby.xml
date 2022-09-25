@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>The Legend of Zelda</artist>
+	<title>Zelda's Lullaby</title>
+	<user>Stouts</user>
+	<instrument>flute</instrument>
+	<tempo>90</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>G2 B F2 E1/2 F1/2 G2 B F3 G2 B f2 e B2 A1/2 G1/2 F3 G2 B F2 E1/2 F1/2 G2 B F3 G2 B f2 e B6 f2 e1/2 d1/2 e1/2 d1/2 B2 e2 d1/2 c1/2 d1/2 c1/2 G2 f2 e1/2 d1/2 e1/2 d1/2 B e b6</melody>
+</song>

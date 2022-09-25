@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>The Legend of Zelda</artist>
+	<title>Song of Time</title>
+	<user>proteininja</user>
+	<instrument>bell</instrument>
+	<tempo>90</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>a d2 f a d2 f a/2 c'/2 b g f/2 g/2 a d c/2 e/2 d</melody>
+</song>

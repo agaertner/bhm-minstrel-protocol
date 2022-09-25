@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Kirby</artist>
+  <title>Gourmet Race</title>
+  <user>Nuge</user>
+  <instrument>horn</instrument>
+  <tempo>190</tempo>
+  <meter>1/4</meter>
+  <algorithm>favor notes</algorithm>
+  <melody>
+    g f/2 e/2 d/2 B/2 G c/2 d/2 e/2 f/2 d z c' z' g z' e d c z c d e c B c G z c' z' g z' e d c c/2 d/2 e f d B c G c z c' z' g z' e d c z c d e c B c G z c' z' g z' e f g c d f d B c3 z F, F, A, C E D C G, F, F, A, C E F G z a z'1/2 g1/2 f e1/2 f1/2 g c g z' f f1/2 e1/2 d e1/2 f1/2 e f g e F, F, A, C E D C G, F, F, A, C E F G z a z'1/2 g1/2 f a/2 b/2 c' g e c d d/2 f/2 d/2 B/2 G/2 B/2 c3 z e/2 e/4 e/4 e/2 f/2 g/2 g/2 f/2 e/2 d/2 d/4 d/4 d/2 e/2 d z/2 e/4 d/4 c/2 c/4 c/4 c/2 d/2 e/2 e/2 d/2 c/2 B/2 B/4 B/4 B/2 c/2 d z/2 c/4 B/4 A/2 A/4 A/4 A/2 B/2 c/2 c/2 B/2 A/2 G/2 G/4 G/4 e/2 f/2 e B e/2 e/4 e/4 e/2 e/2 f/2 f/2 e/2 e/2 d/2 d/4 d/4 d/2 e/2 d z e/2 e/4 e/4 e/2 f/2 g/2 g/2 f/2 e/2 d/2 d/4 d/4 d/2 e/2 d z/2 e/4 d/4 c/2 c/4 c/4 c/2 d/2 e/2 e/2 d/2 c/2 B/2 B/4 B/4 B/2 c/2 d z/2 c/4 B/4 A/2 A/4 A/4 A/2 B/2 c/2 c/2 e/2 f/2 g/2 g/4 g/4 g/2 b/2 g/2 g/4 g/4 f/2 e/2 d/2 f/2 g/2 d/2 f/2 g/2 d/2 f/2 d/2 f/2 g/2 c'/2 b z' 
+  </melody>
+</song>

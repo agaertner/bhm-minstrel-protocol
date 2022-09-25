@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Jeremy Soule</artist>
+	<title>Fear Not This Night</title>
+	<user>Nerdasaurus</user>
+	<instrument>lute</instrument>
+	<tempo>80</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>[A,D,D] F A [A,D,D]2 F1/2 E1/2 [G,C,E] C C1/2 1/2E [G,D,DC]2 [G,D,B]2 [A,D,D] F A [A,D,Dad]2 f1/2 e1/2 [G,C,Ge] c f1/2 e1/2 [G,C,Ge] [d] [c] [D,F,D]/2 [A,]/2 [A,G] [A,A] [A,c]/2 [E,d]/2 [G,e]2 [C,E,C]/2 [G,]/2 [G,E] [G,G] [G,F]/2 [D,E]/2 [G,D]2 [D,F,D]/2 [A,]/2 [A,G] [Aa] [F,Ad]2 [Gd] [G,C]2 [A,C] [G,C]/2 [D,D]/2 [G,B] [G,G] [B,d]/2 [F,c]/2 [B,d]/2 [Da]/2 [Fd]/2 [c]/2 [D,d]/2 [A,c]/2 [Dd]/2 [Aa]/2 [Fd]/2 [c]/2 [C,d]/2 [G,c]/2 [Cd]/2 [Eg]/2 [Ed]/2 [c]/2 [G,c]/2 [D,B]/2 [GC]/2 [BD]/2 [DC]/2 [B]/2 [B,d]/2 [F,c]/2 [B,d]/2 [Da]/2 [Fd]/2 [c]/2 [D,d]/2 [A,c]/2 [Dd]/2 [Aa]/2 [Fd]/2 [c]/2 [A,g]/2 [G,d]/2 [D,c]/2 [G,B]/2 [D,A]/2 [G,B]/2 z/2 [G,D]/2 [D,E] [D,F] [D,daf] [F,DAf] [F,Ada] [D,FDd]2 [F,f]/2 [e]/2 [C,Ge] [G,c] [Gc]/2 [e]/2 [G,GC] z/2 [G,C]/2 [D,B]/2 [G]/2 [D,DFAd] [A,FDf] [F,AD] [A,dfa]2 [F,f]/2 [e]/2 [C,eg] [C,CE] [EC]/2 [e]/2 [G,D] z/2 [G,c]/2 [D,B]/2 [G]/2 [DA] [F,F]/2 [A,G]/2 [F,A] [A,Afa] [F,Dd]/2 [A,Ff]/2 [F,Aa] [F,c] [F,c] [Fc] [G,c]/2 [D,B]/2 [G,G]2 [DA] [F,F]/2 [A,G]/2 [F,A] [A,Afa] [F,Dd]/2 [A,Ff]/2 [F,A] [C,f] [C,f] [C,f] [C,Ff]/2 [G,e]/2 [C,c] [C,G] [C,F] [C,F] [C,F] [C,F]/2 [C,E]/2 [C,C] [C,G,]4</melody>
+</song>

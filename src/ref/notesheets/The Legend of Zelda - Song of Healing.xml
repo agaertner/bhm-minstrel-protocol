@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+    <artist>The Legend of Zelda</artist>
+    <title>Song of Healing</title>
+    <user>McCoy</user>
+    <instrument>harp</instrument>
+    <tempo>110</tempo>
+    <meter>1/2</meter>
+    <algorithm>favor notes</algorithm>
+    <melody>
+        [F,B] C A C F C [F,B] C A C F C
+        [F,B] C A C E [CD] [E,E] B,2 B,2 B,
+        [F,B] C A C F C [F,B] C A C F C
+        [F,B] C A C E [CD] [E,E] B,2 B,2 B,
+
+        [D,F] A, C A, B, A, [D,F] A, C A, B, A,
+        [C,F] G, E G, B [G,A] [C,B] G,2 G,2 G,
+
+        [D,F] A, C A, B, A, [D,F] A, C A, B, A,
+        [C,F] G, E G, [EB] G, [C,EG] G,2 G,2 G,
+
+        [C,FA] F, [CFA] F, [CFA] F, [C,Ad] F, [CAd] F, [CAd]2
+        [A,EG] E, [AEG] E, [CEG] E, [A,Ec] E, [G,EG] E, C2
+
+        [A,FE] D, [F,DF] D, [CDF] D, [A,Ec] D, [F,Ec] D, [CEc]2
+        [F,CE] C, [E,CD] C, [A,CA] E, [F,CE] C, E, C, A,2
+
+        [C,FA] F, [CFA] F, [CFA] F, [C,Ad] F, [CAd] F, [CAd]2
+        [A,EG] E, [AEG] E, [CEG] E, [A,Ec] E, [G,EG] E, C2
+
+        [B,DF] F, [A,DG] F, [D,DA] F, [B,FB] G, [BFc] F, [DFd] F,
+        [B,FA] F, [A,FB] F, [DFd] A [E,Ee]2 B,2 E2
+    </melody>
+</song>

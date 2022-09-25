@@ -1,0 +1,21 @@
+{
+  "name": "Minstrel Protocol",
+  "version": "0.8.4",
+  "namespace": "Nekres.Musician_Module",
+  "package": "Musician Module.dll",
+  "manifest_version": 1,
+
+  "description": "Create, share and play sheet music.",
+  "url": "https://github.com/agaertner/Blish-HUD-Musician",
+  "dependencies": {
+    "bh.blishhud": ">=0.11.6"
+  },
+  "contributors": [
+    {
+      "name": "Nekres",
+      "username": "Nekres.1943"
+    }
+  ],
+  "directories": [ "musician" ],
+  "enabled_without_gw2": false
+}

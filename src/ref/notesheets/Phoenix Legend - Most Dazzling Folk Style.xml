@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Phoenix Legend</artist>
+  <title>Most Dazzling Folk Style</title>
+  <user>nynaeve</user>
+  <instrument>lute</instrument>
+  <tempo>130</tempo>
+  <meter>1/2</meter>
+  <algorithm>favor chords</algorithm>
+  <melody>
+    [Ae]2 A A c2 e2
+    [Fd] d/2 e/2 d c d c A2
+    [Ge]2 A A c2 e2
+    [Eg] d/2 e/2 d c d c B G 
+    [Ae]2 A A c2 e2
+    [Fd] d/2 e/2 d c d c A G
+    [Ge]2 A A c2 e2
+    [Eg] e [EGg]6
+
+    [EA]2 A G [EA]2 A c
+    [Cc]2 d c [EA]2 A, B,
+    [Cc]2 c G [Gc]2 e g 
+    [Gg] e d2 [Ee] D E G
+    [Aa] a a g [Ee] e2 c 
+    [EA] A A e [Gd]2 c d 
+    [Ee] e g e [Ed] e d c 
+    [EA] D [CG]2 [A,EA]4
+
+    [EA]2 A G [CEA]2 A c
+    [FAc]2 d c [CA]4
+    [EGc]2 c G [Ec] d e g
+    [Gg] e d2 [EAe]4
+    [Aa] a a g [Ae] e2 c 
+    [EA] A A e [Gd]2 c d 
+    [Ee] e g e [Ed] e d c 
+    [EA] D [DG]2 [A,EA]4
+    [Ee] e g e [Be] g g a
+    [ec'] a [dg]2 [Aca]4
+
+    [A,A]2 A G [A,A]2 c2
+    [Dd] e/2 d/2 [Gc] d [Ee]2 E G 
+    [EA] a a g [Gd] e/2 d/2 c d
+    [Ee]4 [ce] [ce] [ce]2
+    [Fc]2 A c [Gd]2 G2
+    [Ee] g e d [Ec]3 c
+    [CA] c d e [Dd] c G E
+    [EA]4 [CE] [CA] [CA]2
+    [A,A]2 A G [A,A]2 c2
+    [Dd] e/2 d/2 [Gc] d [Ee]2 E G 
+    [EA] a a g [Gd] e/2 d/2 c d
+    [Ee]4 [ce] [ce] [ce]2
+    [Fc]2 A c [Gd]2 G2
+    [Ee] g e d [Ec]3 c
+    [CA] c d e [eg] e e g 
+    [Aa]6 d/2 e/2 g/2 c'/2
+
+    [Aa]3/2 a/2 a a a g e d
+    [Dd]3/2 d/2 e g e d c A 
+    [EA]2 A G [FA]2 A c
+    [Gd] e/2 d/2 c d [Ee]4
+    [Aa] g e d [Gg] e d c
+    [Gc]6 E/2 G/2 A/2 B/2 
+
+    [Ae]2 A A c2 e2
+    [Fd] d/2 e/2 d c d c A2
+    [Ge]2 A A c2 e2
+    [Eg] d/2 e/2 d c d c B G 
+    [Ae]2 A A c2 e2
+    [Fd] d/2 e/2 d c d c A G
+    [Ge]2 A A c2 e2
+    [Eg] e [EGg]6
+
+    [EA]2 A G [EA]2 A c
+    [Cc]2 d c [EA]2 A, B,
+    [Cc]2 c G [Gc]2 e g 
+    [Gg] e d2 [Ee] D E G
+    [Aa] a a g [Ee] e2 c 
+    [EA] A A e [Gd]2 c d 
+    [Ee] e g e [Ed] e d c 
+    [EA] D [CG]2 [A,EA]4
+
+    [EA]2 A G [CEA]2 A c
+    [FAc]2 d c [CA]4
+    [EGc]2 c G [Ec] d e g
+    [Gg] e d2 [EAe]4
+    [Aa] a a g [Ae] e2 c 
+    [EA] A A e [Gd]2 c d 
+    [Ee] e g e [Ed] e d c 
+    [EA] D [DG]2 [A,EA]4
+    [Ee] e g e [Be] g g a
+    [ec'] a [dg]2 [Aca]4
+
+    [A,A]2 A G [A,A]2 c2
+    [Dd] e/2 d/2 [Gc] d [Ee]2 E G 
+    [EA] a a g [Gd] e/2 d/2 c d
+    [Ee]4 [ce] [ce] [ce]2
+    [Fc]2 A c [Gd]2 G2
+    [Ee] g e d [Ec]3 c
+    [CA] c d e [Dd] c G E
+    [EA]4 [CE] [CA] [CA]2
+    [A,A]2 A G [A,A]2 c2
+    [Dd] e/2 d/2 [Gc] d [Ee]2 E G 
+    [EA] a a g [Gd] e/2 d/2 c d
+    [Ee]4 [ce] [ce] [ce]2
+    [Fc]2 A c [Gd]2 G2
+    [Ee] g e d [Ec]3 c
+    [CA] c d e [eg] e e g 
+    [Aa]6
+  </melody>
+</song>

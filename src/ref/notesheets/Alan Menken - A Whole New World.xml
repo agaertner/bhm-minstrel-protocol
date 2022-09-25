@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Alan Menken</artist>
+	<title>A Whole New World</title>
+	<user>Declanis</user>
+	<instrument>flute</instrument>
+	<tempo>110</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>g f/2 a g/2 e B4 g f/2 a g/2 e g2 f2 f e/2 g f/2 d f e d e c/2 e f e B4 z'/2 g f/2 a g/2 e B4 g f/2 a g/2 e g2 f2 f e/2 g f/2 d f e d e c e f e g3/2 f/2 g c' b5 z'1/2 f/2 g c' b f/2 a g g2 f1/2 g1/2 a d' c' b3/2 f/2 d' c' b3/2 f/2 a g f e e f/2 f/2 g c' b5 z'1/2 f/2 g c' b f/2 a g g2 f1/2 g1/2 a d' c' b3/2 f/2 d' e' b3/2 f/2 g f e f a g e d e4</melody>
+</song>

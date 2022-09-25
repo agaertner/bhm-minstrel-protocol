@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Age of Empires II</artist>
+	<title>Main Theme</title>
+	<user>speachlesslee</user>
+	<instrument>horn</instrument>
+	<tempo>120</tempo>
+	<meter>1/2</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>C2 F5 A G F G5 z
+		C2 F5 A G F B5 z
+		C2 F5 A G F G6
+		z2 G5 A G E F6 z4 
+
+		G2 c2 B2 d5 z
+		g2 f5 z d c d2 z f5 z 
+		G2 c2 B2 d6
+		c B G4 F2 B2
+		G5 z
+
+		G2 c5 e d c d5 z
+		G2 c5 e d c f5 z
+		G2 c5 e d c d6
+		z2 d5 e d B c6
+	</melody>
+</song>

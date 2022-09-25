@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Jeremy Soule</artist>
+	<title>The Tengu Wall</title>
+	<user>bebunw</user>
+	<instrument>flute</instrument>
+	<tempo>60</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>c/2 e/2 f/2 g b3/2 z'/2 g/4 f/4 g/2 f/4 e/4 e c3/2 z'/2 c/2 e/2 g/2 f2 z'/2 g/4 f/4 e/2 d/4 B/4 c2 z'/2
+c/2 e/2 f/2 g b3/2 z'/2 g/4 f/4 g/2 f/4 e/4 e c3/2 z'/2  c/2 e/2  f/2  B2 z'/2  B/2  e/2  d/2  c2 z'/2 
+c/2 e/2 f/2 g b3/2 z'/2 g/4 f/4 g/2 f/4 e/4 e c3/2 z'/2 c/2 e/2 g/2 f2 z'/2 g/4 f/4 e/2 d/4 B/4 c2 z'/2
+c/2 e/2 f/2 g b3/2 z'/2 g/4 f/4 g/2 f/4 e/4 e c3/2 z'/2  c/2 e/2  f/2  B2 z'/2  B/2  e/2  d/2  c2
+
+e/2 d/2 c/2 d/2 e/2 g/2 G/2 g3/2 f/2 e/4 z'/4 e d/2 c/4 z'/4 c A3/2 z/2 G/2 g3/2 f/4 z'/4 f/2 e/2 g/2 b/4 z'/4 b f3/2 z'/2
+c'/2 d'/4 z'/4 d'/2 e'/4 z'/4 e'/2 d'/4 z'/4 d'/2 c'/4 z'/4 c'/2 b/4 z'/4 b f z'/2
+e/2 g/2 b/2 f2 z'/2 G/2 f2 z'/2 G/2 z'
+
+c/2 e/2 f/2 g b3/2 z'/2 g/4 f/4 g/2 f/4 e/4 e c3/2 z' c/2 e/2 f/2 g2 z'  c/2 e/2 f/2 g z'/2 G c3/2</melody>
+</song>

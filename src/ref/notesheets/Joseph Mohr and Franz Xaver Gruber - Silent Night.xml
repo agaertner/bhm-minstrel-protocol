@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Joseph Mohr &amp; Franz Xaver Gruber</artist>
+  <title>Silent Night</title>
+  <user>proteininja</user>
+  <instrument>bell2</instrument>
+  <tempo>90</tempo>
+  <meter>1/8</meter>
+  <algorithm>favor notes</algorithm>
+  <melody>
+    g3/4 a/4 g/2 e3/2 g3/4 a/4 g/2 e3/2 d' d'/2 b3/2 c' c'/2 g3/2 [fa] [fa]/2 [ac']3/4 [gb]/4 [fa]/2 [eg]3/4 [fa]/4 [eg]/2 [ce]3/2 [fa]/2 e/2 [dfa]/2 [cac']3/4 [gb]/4 [fa]/2 [dg]3/4 [fa]/4 [dg]/2 [cd]/2 e [fbd']/2 g/2 [abd']/2 [gd'f']/2 a/4 [bd']/4 [gb]/2 [cegc']3/2 [ege']3/2 c'/2 g/2 e/2 g3/4 f/4 d/2 c3/2
+  </melody>
+</song>

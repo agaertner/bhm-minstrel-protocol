@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Howard Shore</artist>
+	<title>Concerning Hobbits</title>
+	<user>cynber</user>
+	<instrument>flute</instrument>
+	<tempo>90</tempo>
+	<meter>1/4</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>E/2 F/2 G B G/2 F/2 E2 G/2 B/2 c e d B G2 A/2 G/2 F2</melody>
+</song>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Yiruma</artist>
+  <title>River Flows in You</title>
+  <user>nynaeve</user>
+  <instrument>harp</instrument>
+  <tempo>135</tempo>
+  <meter>1/2</meter>
+  <algorithm>favor notes</algorithm>
+  <melody>
+    [A,c]2 [EB]2 [Ac]2 B2 [F,c]2 [CG]2 [Gc]2 F8 C E 
+    [A,c]2 [EB]2 [Ac]2 B2 [F,c]2 [CG]2 [Gc]2 F8 C E 
+    [A,c]2 [E,B] c A, C B c F, C [C,G] c G, C F C [C,D]/2 E3/2 [G,F]2 [CEG]2 E2 [B,D]2 D,2 G,2 C B, 
+    [A,C]2 E,2 A, G, C D [F,E]2 C,2 G, E F G C,2 G,2 E2 F E [G,D]2 D,2 B,4 
+    [A,C]/4 E/4 c3/2 [E,B] c A, C B c F, C [C,G] c G, C [F,F] C [C,D]/2 E3/2 [G,F]2 [EG]2 e2 [G,d]2 [DG]2 [Gd]/4 e/4 d3/2 c B 
+    [A,Gc]2 E,2 A,2 C D [F,E]2 [C,G,]2 [G,C]2 E F [C,G]2 G,2 E2 F E [G,D]2 D,2 [G,c] d c B 
+    [A,c] C [EG] C [Ac] d [A,c] B [F,c] C [CG] C [Gc] d [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B]2 [D,D]2 [Gc] d [G,c] B 
+    [A,c] C [EG] C [Ac] d [A,c] B [F,c] C [CG] C [Gc] d [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B]2 [D,D]2 [Gc] c/2 d/2 [G,c] B 
+    [A,c] C [EG] C [Ac] d [A,c] B [F,c] C [CG] C [Gc]3/2 d/2 [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B]2 [D,D]2 [B,c]3/2 d/2 [G,c] B 
+    [A,c] C [EG] C [Ac] d [A,c] B [F,c] C [CG] C [Gc] d [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B]2 [D,D]2 [D,B,]2 G,4 
+    C E 
+    [A,c]2 [E,B] c A, C B c F, C [C,G] c G, C [F,F] C [C,D]/2 E3/2 [G,F]2 [CEG]2 [C,E]2 [G,B,D]2 D,2 G,2 C B, 
+    [G,A,C]2 E,3 G, C D [F,E] G, [G,C] D E G, [G,E] F [C,G] G, [G,E] F [EG] G, [C,F] E [G,D] G, [D,F] E [G,D]2 B,2 
+    [A,E]/2 c3/2 [E,B] c A, C B c F, C [C,G] c G, C [F,F] C [C,D]/2 E3/2 [G,F]2 [EG]2 e2 [G,d]2 [DG]2 [Gd]/4 e/4 d3/2 c B 
+    [A,c]2 E,2 A,2 C D [F,E] G, [C,C] D [G,E] G, [F,E] F [C,G] G, [G,E] F [EG] G, [C,F] E [G,D] G, [DB,] D [B,c] d [G,c] B 
+    [A,E]/2 c/2 C [EG] C [Ac] c/2 d/2 [A,c] B [F,c] C [CG] C [Gc] c/2 d/2 [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B] D [DG] D [B,c] c/2 d/2 [D,c] B 
+    [A,E]/2 c/2 C [EG] C [Ac] c/2 d/2 [A,c] B [F,c] C [CG] C [Gc] c/2 d/2 [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B] D [DG] D [B,c] c/2 d/2 [G,c] B 
+    [A,E]/2 c/2 C [EG] C [Ac] c/2 d/2 [A,c] B [F,c] C [CG] C [Gc] c/2 d/2 [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B] D [DG] D [B,c] c/2 d/2 [G,c] B 
+    [A,c] C [EG] C [Ac] c/2 d/2 [A,c] B [F,c] C [CG] C [Gc] c/2 d/2 [F,c] B [C,c] d [G,e] f [Eg] e [C,d] c [G,B]2 [D,D]2 [D,B,]2 G,2 
+    [A,C]/4 E/4 c3/2 B2 c2 B2 [A,Ec]2 [FG]2 [Ac]2 [F,F]2 [G,E]2 [E,F]2 [CG]2 E2 [G,B,D]4 C2 B,2 
+    [C,E]/4 G/4 C3/2 E,2 G,2 C D [F,E]2 [C,G,]2 [G,C]2 E F [C,G]2 G,2 E2 F E [G,D]2 D,2 B,2 C E 
+    [A,c]2 [EB]2 [Ac]2 B2 [F,E]/4 G/4 c3/2 [CG]2 [Gc]2 [F,F]2 [C,D]/2 E3/2 [G,F]2 [E,G]2 e2 [G,Gd]2 D,2 B,2 C B, 
+    [E,G,C]2 E,2 A,2 C D [F,E]2 [C,G,]2 [F,C]2 E F [C,G]2 G,2 [D,E]2 F E [G,D]2 D,2 [C,G,]4 
+    C,/4 E,/4 G,/4 C/4
+  </melody>
+</song>

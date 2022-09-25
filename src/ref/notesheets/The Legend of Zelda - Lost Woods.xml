@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Kouji Kondou</artist>
+  <title>Lost Woods</title>
+  <user>proteininja</user>
+  <instrument>flute</instrument>
+  <tempo>100</tempo>
+  <meter>1/2</meter>
+  <algorithm>favor notes</algorithm>
+  <melody>
+    A c d2 A c d2 A c d g f2 d e d B G5 F G B G6 A c d2 A c d2 A c d g f2 d e g d B5 d B F G6 F G A2 B c d2 e d G6 F G A2 B c d2 e f g6 F G A2 B c d2 e d G6 F E G F A G B A c B d c e d g/2 a f/2 g7 z' g2 d2 G2
+  </melody>
+</song>

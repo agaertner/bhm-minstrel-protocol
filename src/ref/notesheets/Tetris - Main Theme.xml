@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<song>
+  <artist>Hirokazu Tanaka</artist>
+  <title>Tetris Theme</title>
+  <user>proteininja</user>
+  <instrument>bell</instrument>
+  <tempo>90</tempo>
+  <meter>1/4</meter>
+  <algorithm>favor notes</algorithm>
+  <melody>
+    e' b/2 c'/2 d' c'/2 b/2 a a/2 c'/2 e' d'/2 c'/2 b b/2 c'/2 d' e' c' a a5/2 d' f'/2 a' g'/2 f'/2 e'3/2 c'/2 e' d'/2 c'/2 b b/2 c'/2 d' e' c' a a2
+  </melody>
+</song>

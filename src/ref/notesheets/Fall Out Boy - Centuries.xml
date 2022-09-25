@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Fall Out Boy</artist>
+	<title>Centuries</title>
+	<user>Lernova Shaemoor</user>
+	<instrument>harp</instrument>
+	<tempo>90</tempo>
+	<meter>1/1</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>A2 B2
+c2 e2 A2 B c3 e2 A2 e2
+d2 c2 d2 c d3 c4 A,2
+
+[A,C]2 B,2 A,2 A,4 A,2 A,2 A,2
+[G,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 G,2 A,2 E E3 A,2
+
+[E,C]2 B,2 A,2 A,8 A,2
+[E,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 G,2 A,2 E E5
+
+E2 D2 C2 D2 A,6 A,2
+E2 D2 C2 D10
+E2 D2 C2 D2 A,6 G,2
+A,2 E E3 G,2 A,2 E E5
+
+z2 E E D2 C2 D C C2 C A,3
+z2 E E D2 C2 D C C2 C A,2 A,
+D E D2 C A,2 A, D E D2 C A,3
+D E D C D2 C6 [Acea]3
+
+E D2 D E2 D2 D2 C2 C A,2 C
+D E D C D2 D C D2 C2 C A,2 C
+D E D C C3 C D E D C C3 C
+D E D C D2 C2 C2 A,2 [A,E]4
+
+C2 E2 A,2 B, C3 E2 A,2 E2
+D2 C2 D2 C D3 C2 A,2 A,2
+
+[A,C]2 B,2 A,2 A,4 A,2 A,2 A,2 
+[G,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 G,2 A,2 E E3 A,2
+
+[E,C]2 B,2 A,2 A,8 A,2
+[E,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 [G,G]2 [A,A]2 [Ee] [Ee]7
+
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [A,A]2
+[Ee]2 [Dd]2 [Cc]2 [Dd]10
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [G,G]2
+[A,A]2 [Ee] [Ee]3 [G,G]2 [A,A]2 [Ee] [Ee]5
+
+A,2 D E D2 C2 D2 C2 C A,2 A,
+D E D C D2 C2 D2 C2 C A,2 A,
+D E D C C3 C D E D C C3 A,
+D E D C D2 C2 C2 A,2 A,2 A,2
+
+A,2 G,2 E,2 A,2 G,2 E,2 C,2 D,2
+z3 E,8 z4 C
+
+D E D C C2 A,2 D E D C D3 A,
+E2 E2 E D E D E2 E2 [A,E]2 B,2
+C2 E2 A,2 B, C3 E2 A,2 E2
+D2 C2 D2 C D3 C2 A,2 A,2
+
+[A,C]2 B,2 A,2 A,4 A,2 A,2 A,2 
+[G,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 G,2 A,2 E E3 A,2
+
+[E,C]2 B,2 A,2 A,8 A,2
+[E,C]2 B,2 A,2 A,3 A, A,2 A,2 A,2
+[F,A,]2 E E11 G,2
+[F,A,]2 E E3 [G,G]2 [A,A]2 [Ee] [Ee]5
+
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [A,A]2
+[Ee]2 [Dd]2 [Cc]2 [Dd]10
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [G,G]2
+[A,A]2 [Ee] [Ee]3 [G,G]2 [A,A]2 [Ee] [Ee]5
+
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [A,A]2
+[Ee]2 [Dd]2 [Cc]2 [Dd]10
+[Ee]2 [Dd]2 [Cc]2 [Dd]2 [A,A]6 [G,G]2
+[A,A]2 [Ee] [Ee]3 [G,G]2 [A,A]2 [Ee] [Ee]5</melody>
+</song>

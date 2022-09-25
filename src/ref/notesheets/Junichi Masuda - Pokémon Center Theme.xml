@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>Junichi Masuda</artist>
+	<title>Pokémon Center</title>
+	<user>mashersmith109</user>
+	<instrument>flute</instrument>
+	<tempo>90</tempo>
+	<meter>1/8</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>e/4 B/4 e/4 b/2 a/2 g/4 f/4 d/4 B d/4 B/4 d/4 g/2 f/2 d/4 e/4 g e/4 B/4 e/4 b/2 a/2 g/4 f/4 d/4 B d/4 B/4 d/4 g/2 f/2 d/4 e g b a/4 b/4 a/4 g/4 f d f g/4 a/4 g/4 f/4 e g b a/4 g/4 a/4 b/4 c' b/2 a/4 g/4 a g/4 a/4 g/4 f/4 e</melody>
+</song>

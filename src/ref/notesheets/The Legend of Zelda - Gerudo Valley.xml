@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<song>
+	<artist>The Legend of Zelda</artist>
+	<title>Gerudo Valley</title>
+	<user>Sirius</user>
+	<instrument>flute</instrument>
+	<tempo>90</tempo>
+	<meter>1/1</meter>
+	<algorithm>favor notes</algorithm>
+	<melody>G c d e z G c d e3 z3 A c d e z A c d e3 z3 F B c d z F B c d3 z3 c2 d2 c2 d2 z3 G c d e z G c d e3 z3 A c d e z A c d e3 z3 F B c d z F B c d3 z3 e2 f2 e2 d2 z3 G3 e3 d3 c3 G2 B2 B c B A3 z2 F3 d3 c3 B3 A2 G2 z A B A G3 z3 G3 e3 d3 c3 G2 B2 B c B A3 z2 A3 F3 B2 c3 F2 G3 z3 e d e z2 c d e z2 f e z2 d z2 e d e z2 d c d z2 B c d z2 e d c z2 d3 z3 e d e z2 c 2d 2e z f e z' d3 z e d e z2 f e f2 d3 z e f g a b z g a g</melody>
+</song>
