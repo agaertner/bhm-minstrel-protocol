@@ -1,6 +1,6 @@
 {
   "name": "Minstrel Protocol",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "namespace": "Nekres.Musician_Module",
   "package": "Musician Module.dll",
   "manifest_version": 1,

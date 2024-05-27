@@ -208,7 +208,9 @@ namespace Nekres.Musician
         private void CreateModuleIcon()
         {
             if (_moduleIcon != null) return;
-            _moduleIcon = new CornerIcon(_moduleIconTex, this.Name);
+            _moduleIcon = new CornerIcon(_moduleIconTex, this.Name) {
+                Priority = 40133923
+            };
             _moduleIcon.Click += OnModuleIconClick;
         }
 
