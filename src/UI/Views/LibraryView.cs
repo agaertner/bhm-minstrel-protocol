@@ -91,8 +91,8 @@ namespace Nekres.Musician.UI.Views
                 Size = new Point(64, 64),
                 Location = new Point((buildPanel.ContentRegion.Width - 64) / 2, (buildPanel.ContentRegion.Height - 64) / 2)
             };
-
-            var initialSheets = await MusicianModule.ModuleInstance.MusicSheetService.GetAll();
+             
+            var initialSheets = MusicianModule.ModuleInstance.MusicSheetService.GetAll();
             foreach (var sheet in initialSheets)
             {
                 loading.BasicTooltipText = $"Loading {sheet.Title}";
@@ -131,23 +131,23 @@ namespace Nekres.Musician.UI.Views
             
             var sheetBtn = (SheetButton)o;
             if (e.Value) {
-                var sheet = await MusicianModule.ModuleInstance.MusicSheetService.GetById(sheetBtn.Id);
+                var sheet = MusicianModule.ModuleInstance.MusicSheetService.GetById(sheetBtn.Id);
                 await MusicianModule.ModuleInstance.MusicPlayer.PlayPreview(MusicSheet.FromModel(sheet));
             }
             else
                 MusicianModule.ModuleInstance.MusicPlayer.Stop();
         }
 
-        private async void OnEmulateClick(object o, EventArgs e)
+        private void OnEmulateClick(object o, EventArgs e)
         {
             var sheetBtn = (SheetButton)o;
-            var sheet = await MusicianModule.ModuleInstance.MusicSheetService.GetById(sheetBtn.Id);
+            var sheet = MusicianModule.ModuleInstance.MusicSheetService.GetById(sheetBtn.Id);
             MusicianModule.ModuleInstance.MusicPlayer.PlayEmulate(MusicSheet.FromModel(sheet));
         }
 
-        private async void OnDeleteClick(object o, ValueEventArgs<Guid> e)
+        private void OnDeleteClick(object o, ValueEventArgs<Guid> e)
         {
-            await MusicianModule.ModuleInstance.MusicSheetService.Delete(e.Value);
+            MusicianModule.ModuleInstance.MusicSheetService.Delete(e.Value);
         }
 
         private void OnImportFromClipboardBtnClick(object o, MouseEventArgs e)

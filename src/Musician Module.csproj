@@ -25,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -54,15 +57,22 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AsyncClipboardService, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AsyncClipboardService.1.7.1\lib\net45\AsyncClipboardService.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Blish HUD, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\BlishHUD.0.11.6\lib\net472\Blish HUD.exe</HintPath>
+    <Reference Include="Blish HUD, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\BlishHUD.1.2.0\lib\net472\Blish HUD.exe</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
     </Reference>
     <Reference Include="Gapotchenko.FX, Version=2021.1.5.4096, Culture=neutral, PublicKeyToken=a750ee378eaf756f, processorArchitecture=MSIL">
       <HintPath>packages\Gapotchenko.FX.2021.1.5\lib\net472\Gapotchenko.FX.dll</HintPath>
@@ -77,17 +87,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Gw2Sharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Gw2Sharp.1.7.0\lib\netstandard2.0\Gw2Sharp.dll</HintPath>
+      <HintPath>packages\Gw2Sharp.1.7.4\lib\netstandard2.0\Gw2Sharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="LiteDB, Version=5.0.11.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <HintPath>packages\LiteDB.5.0.11\lib\net45\LiteDB.dll</HintPath>
-    </Reference>
-    <Reference Include="litedbasync, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\LiteDB.Async.0.1.0\lib\netstandard2.0\litedbasync.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -104,6 +108,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Win32.Primitives" />
     <Reference Include="MonoGame.Extended, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MonoGame.Extended.3.8.0\lib\netstandard2.0\MonoGame.Extended.dll</HintPath>
       <Private>False</Private>
@@ -173,6 +178,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.AppContext" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
       <Private>False</Private>
@@ -182,45 +188,70 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.Tracing" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.14.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.14.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.ZipFile" />
+    <Reference Include="System.IO.FileSystem" />
+    <Reference Include="System.IO.FileSystem.Primitives" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Linq.Expressions" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Sockets" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Reflection" />
     <Reference Include="System.Resources.Extensions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Resources.Extensions.6.0.0\lib\net461\System.Resources.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Runtime.Extensions" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms" />
+    <Reference Include="System.Security.Cryptography.Encoding" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Primitives, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ServiceModel.Primitives.4.9.0\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.4\lib\net461\System.Text.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>False</Private>
@@ -232,6 +263,20 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\submodules\bhud-extended\**\*.cs" Link="_Submodules\%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\submodules\bhud-extended\**\Properties\*.resx" Link="_Submodules\%(RecursiveDir)%(Filename)%(Extension)">
+      <!--Required to make the ResourceManager find translations -->
+      <LogicalName>Blish_HUD.Extended.Properties.%(Filename).resources</LogicalName>
+      <Visible>False</Visible>
+    </EmbeddedResource>
+    <!-- Exclude AssemblyInfo.cs of submodule projects to avoid duplication error (Compile Error CS0579) -->
+    <Compile Remove="..\submodules\**\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\submodules\litedb\LiteDB\**\*.cs" Link="_Submodules\LiteDB\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UI\Controls\IntegerInput.cs" />
@@ -329,30 +374,47 @@
     <None Include="Content\bin\Windows\Content\fonts\consolas-8-bold.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\consolas-8.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia-8-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-11-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-12-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-14-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-16-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-18-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-20-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-20-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-20-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-20-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-22-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-22-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-22-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-22-regular_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-24-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-24-bold_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-24-bold_1.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-24-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-24-regular_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-32-regular.xnb" />
@@ -361,9 +423,14 @@
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-34-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-34-regular_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-34-regular_1.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-bold_0.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-bold_1.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-regular.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-regular_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-36-regular_1.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-8-bold.xnb" />
+    <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-8-bold_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-8-italic.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-8-italic_0.xnb" />
     <None Include="Content\bin\Windows\Content\fonts\menomonia\menomonia-8-regular.xnb" />
@@ -402,9 +469,11 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\System.Resources.Extensions.6.0.0\buildTransitive\net461\System.Resources.Extensions.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Resources.Extensions.6.0.0\buildTransitive\net461\System.Resources.Extensions.targets'))" />
     <Error Condition="!Exists('packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets'))" />
-    <Error Condition="!Exists('packages\BlishHUD.0.11.6\build\BlishHUD.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\BlishHUD.0.11.6\build\BlishHUD.targets'))" />
+    <Error Condition="!Exists('packages\BlishHUD.1.2.0\build\BlishHUD.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\BlishHUD.1.2.0\build\BlishHUD.targets'))" />
+    <Error Condition="!Exists('packages\System.Text.Json.6.0.4\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.6.0.4\build\System.Text.Json.targets'))" />
   </Target>
   <Import Project="packages\System.Resources.Extensions.6.0.0\buildTransitive\net461\System.Resources.Extensions.targets" Condition="Exists('packages\System.Resources.Extensions.6.0.0\buildTransitive\net461\System.Resources.Extensions.targets')" />
   <Import Project="packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets" Condition="Exists('packages\MonoGame.Framework.WindowsDX.3.8.0.1641\build\MonoGame.Framework.WindowsDX.targets')" />
-  <Import Project="packages\BlishHUD.0.11.6\build\BlishHUD.targets" Condition="Exists('packages\BlishHUD.0.11.6\build\BlishHUD.targets')" />
+  <Import Project="packages\BlishHUD.1.2.0\build\BlishHUD.targets" Condition="Exists('packages\BlishHUD.1.2.0\build\BlishHUD.targets')" />
+  <Import Project="packages\System.Text.Json.6.0.4\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.4\build\System.Text.Json.targets')" />
 </Project>

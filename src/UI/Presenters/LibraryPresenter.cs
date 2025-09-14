@@ -53,7 +53,7 @@ namespace Nekres.Musician.UI.Presenters
                ScreenNotification.ShowNotification("Your clipboard does not contain a valid music sheet.", ScreenNotification.NotificationType.Error);
                return;
             }
-            await MusicianModule.ModuleInstance.MusicSheetService.AddOrUpdate(sheet);
+            MusicianModule.ModuleInstance.MusicSheetService.AddOrUpdate(sheet);
         }
     }
 }

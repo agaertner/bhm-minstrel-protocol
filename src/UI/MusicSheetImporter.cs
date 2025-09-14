@@ -69,7 +69,7 @@ namespace Nekres.Musician
             var sheet = MusicSheet.FromXml(filePath);
             if (sheet == null) return;
             await FileUtil.DeleteAsync(filePath);
-            await AddToDatabase(sheet, silent);
+            AddToDatabase(sheet, silent);
         }
 
         internal async Task ImportFromStream(Stream stream, bool silent = false)
@@ -78,15 +78,15 @@ namespace Nekres.Musician
             var read = await stream.ReadAsync(buffer, 0, buffer.Length);
             var content = System.Text.Encoding.UTF8.GetString(buffer);
             if (!MusicSheet.TryParseXml(content, out var sheet)) return;
-            await AddToDatabase(sheet, silent);
+            AddToDatabase(sheet, silent);
             stream.Dispose();
         }
 
-        private async Task AddToDatabase(MusicSheet sheet, bool silent)
+        private void AddToDatabase(MusicSheet sheet, bool silent)
         {
             try
             {
-                await _sheetService.AddOrUpdate(sheet, silent);
+                _sheetService.AddOrUpdate(sheet, silent);
             }
             catch (ObjectDisposedException)
             {

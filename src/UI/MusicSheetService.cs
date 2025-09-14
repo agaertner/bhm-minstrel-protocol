@@ -1,13 +1,11 @@
 ﻿using Blish_HUD;
-using LiteDB.Async;
+using LiteDB;
 using Microsoft.Xna.Framework.Audio;
 using Nekres.Musician.Core.Models;
 using Nekres.Musician.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
-using LiteDB;
 
 namespace Nekres.Musician.UI
 {
@@ -17,8 +15,8 @@ namespace Nekres.Musician.UI
 
         public string CacheDir { get; private set; }
 
-        private LiteDatabaseAsync _db;
-        private ILiteCollectionAsync<MusicSheetModel> _ctx;
+        private LiteDatabase _db;
+        private ILiteCollection<MusicSheetModel> _ctx;
 
         private SoundEffect[] _deleteSfx;
         public SoundEffect DeleteSfx => _deleteSfx[RandomUtil.GetRandom(0, 1)];
@@ -35,7 +33,7 @@ namespace Nekres.Musician.UI
 
         public void LoadDatabase()
         {
-            _db = new LiteDatabaseAsync(new ConnectionString
+            _db = new LiteDatabase(new ConnectionString
             {
                 Filename = Path.Combine(this.CacheDir, "data.db"),
                 Connection = ConnectionType.Shared
@@ -43,21 +41,21 @@ namespace Nekres.Musician.UI
             _ctx = _db.GetCollection<MusicSheetModel>("music_sheets");
         }
 
-        public async Task AddOrUpdate(MusicSheet musicSheet, bool silent = false)
+        public void AddOrUpdate(MusicSheet musicSheet, bool silent = false)
         {
             var model = musicSheet.ToModel();
-            await _ctx.UpsertAsync(model);
-            await _ctx.EnsureIndexAsync(x => x.Id);
+            _ctx.Upsert(model);
+            _ctx.EnsureIndex(x => x.Id);
             OnSheetUpdated?.Invoke(this, new ValueEventArgs<MusicSheetModel>(model));
 
             if (silent) return;
             GameService.Content.PlaySoundEffectByName("color-change");
         }
 
-        public async Task Delete(Guid key)
+        public void Delete(Guid key)
         {
             DeleteSfx.Play(GameService.GameIntegration.Audio.Volume, 0, 0);
-            await _ctx.DeleteManyAsync(x => x.Id.Equals(key));
+            _ctx.DeleteMany(x => x.Id.Equals(key));
         }
 
         public void Dispose()
@@ -66,14 +64,14 @@ namespace Nekres.Musician.UI
             _db?.Dispose();
         }
 
-        public async Task<MusicSheetModel> GetById(Guid id)
+        public MusicSheetModel GetById(Guid id)
         {
-           return await _ctx.FindOneAsync(x => x.Id.Equals(id));
+           return _ctx.FindOne(x => x.Id.Equals(id));
         }
 
-        public async Task<IEnumerable<MusicSheetModel>> GetAll()
+        public IEnumerable<MusicSheetModel> GetAll()
         {
-            return await _ctx.FindAllAsync();
+            return _ctx.FindAll();
         }
     }
 }
