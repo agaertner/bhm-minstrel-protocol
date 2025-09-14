@@ -1,0 +1,123 @@
+name: Staging
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'src/**/*'
+      - 'submodules/**/*'
+  pull_request_target:
+    types: [opened, synchronize]
+    paths:
+      - 'src/**/*'
+      - 'submodules/**/*'
+
+concurrency:
+  group: test-pr-${{ github.head_ref }}
+  cancel-in-progress: true
+  
+jobs:
+    build:
+        name: Test Build Artifact
+        runs-on: windows-latest
+        # Map a step output to a job output
+        outputs:
+            namespace: ${{ steps.get_namespace.outputs.prop }}
+            version: ${{ steps.get_version.outputs.prop }}
+        steps:
+            - name: Install MSBuild Tools
+              uses: microsoft/setup-msbuild@v2
+              
+            - name: Install NuGet
+              uses: nuget/setup-nuget@v2
+              with:
+                nuget-api-key: ${{ secrets.NuGetAPIKey }}
+                nuget-version: '5.x'
+
+            - name: Checkout
+              uses: actions/checkout@v4.1.7
+              with:
+                submodules: 'true'
+                fetch-depth: 0
+
+            # Required to find output module BHM without glob pattern.
+            - name: Get module *.csproj name
+              id: get_csproj
+              working-directory: ./src
+              shell: pwsh
+              run: echo "name=$((Get-ChildItem $dir -File '*.csproj').Basename)" >> $env:GITHUB_OUTPUT
+            
+            # Used as prefix in module BHM naming scheme.
+            - name: Get manifest namespace
+              id: get_namespace
+              uses: notiz-dev/github-action-json-property@v0.2.0
+              with: 
+                path: 'src/manifest.json'
+                prop_path: 'namespace'
+                
+            # Used as suffix in module BHM naming scheme.
+            - name: Get manifest version
+              id: get_version
+              uses: notiz-dev/github-action-json-property@v0.2.0
+              with:
+                path: 'src/manifest.json'
+                prop_path: 'version'
+                
+            # 'msbuild restore' does not support NuGet package.config format
+            - name: Restore NuGet packages
+              working-directory: ./src
+              shell: pwsh
+              run: nuget restore
+            
+            - name: Build Solution
+              working-directory: ./src
+              shell: pwsh
+              run: msbuild -p:Configuration=Debug -p:VERSIONED_BUILD=${{ steps.get_version.outputs.prop }} -property:OutputPath=bin/Debug
+        
+            - name: Upload BHM artifact
+              id: upload_bhm
+              uses: actions/upload-artifact@v4.3.3
+              with:
+                name: '${{ steps.get_namespace.outputs.prop }}_${{ steps.get_version.outputs.prop }}+PR.${{ github.event.number }}'
+                path: |
+                  src/bin/Debug/
+                  !src/bin/Debug/**/${{ steps.get_csproj.outputs.name }}.bhm
+             
+    reference-artifact:
+        name: Reference BHM Artifact
+        runs-on: windows-latest
+        needs: build
+        steps:
+            - name: Get artifact URL
+              id: get_artifact
+              run: |
+                set -x
+                RESPONSE=$(curl -s "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts")
+                ARTIFACT_URL=$(echo "$RESPONSE" | jq -r ".artifacts[] | select(.name == \"${{ needs.build.outputs.namespace }}_${{ needs.build.outputs.version }}+PR.${{ github.event.number }}\") | .archive_download_url")
+                if [ -z "$ARTIFACT_URL" ]; then
+                  ARTIFACT_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                fi
+                echo "artifact_url=$ARTIFACT_URL" >> $GITHUB_OUTPUT
+              shell: bash
+      
+            - name: Comment BHM artifact reference
+              # In public repositories this action does not work in
+              # pull_request workflows when triggered by forks.
+              # Any attempt will be met with the error "Resource not
+              # accessible by integration". This is due to token
+              # restrictions put in place by GitHub Actions.
+              # We continue-on-error to give green light to fork PRs anyway.
+              # The artifacts are still available in the action summary.
+              uses: peter-evans/create-or-update-comment@v4.0.0
+              continue-on-error: true
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.number }}
+                reactions: rocket
+                body: |
+                  BHM artifact generated from changes of this pull request:
+                  <details>
+                  <summary>Click to expand</summary>
+                  
+                  &nbsp;&nbsp;&nbsp;&nbsp;**• [Download BHM artifact](${{ steps.get_artifact.outputs.artifact_url }})**
+                  </details>

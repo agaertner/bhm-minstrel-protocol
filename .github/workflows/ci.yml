@@ -1,0 +1,91 @@
+name: Integration
+
+on: 
+  push:
+    branches: 
+      - dev
+    paths:
+      - 'src/**/*'
+      - 'submodules/**/*'
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+  
+concurrency:
+  group: version-bump
+  cancel-in-progress: true
+
+jobs:
+    build-prerelease:
+        name: Bump Version / Create Pull Request
+        runs-on: windows-latest
+        # Only run on pushes directly to dev. Ignore pushes to PRs
+        if: ${{ github.ref == 'refs/heads/dev' && !github.event.pull_request && !startsWith(github.ref, 'refs/tags/') }}
+        steps:
+            - name: Install GitVersion
+              uses: gittools/actions/gitversion/setup@v1.1.1
+              with:
+                versionSpec: '5.x'
+                
+            - name: Checkout 'dev'
+              uses: actions/checkout@v4.1.7
+              with:
+                submodules: 'false'
+                fetch-depth: 0
+
+            - name: (Re-)create branch 'actions/version-bump'
+              continue-on-error: true
+              run: |
+                git push origin --delete actions/version-bump
+                git branch --delete --remotes origin/actions/version-bump
+                git fetch origin --prune
+                git checkout -b actions/version-bump
+                git push --set-upstream origin actions/version-bump
+                
+            - name: Checkout 'actions/version-bump'
+              uses: actions/checkout@v4.1.7
+              with:
+                ref: actions/version-bump
+                submodules: 'false'
+                fetch-depth: 0
+                
+            - name: Bump version in AssemblyInfo.cs
+              id: gitversion
+              uses: gittools/actions/gitversion/execute@v1.1.1
+              with:
+                useConfigFile: true
+                updateAssemblyInfo: true
+                updateAssemblyInfoFilename: src/Properties/AssemblyInfo.cs
+
+            - name: Bump version in manifest.json
+              uses: jossef/action-set-json-field@v2.2
+              with:
+                file: src/manifest.json
+                field: version
+                value: ${{ steps.gitversion.outputs.majorMinorPatch }}
+
+            - name: Commit version changes
+              shell: pwsh
+              run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                git add -A
+                git commit -m "(skip): 🔖 bump version to ${{ steps.gitversion.outputs.fullSemVer }}"
+                
+            - name: Push version changes
+              uses: ad-m/github-push-action@v0.8.0
+              with:
+                github_token: ${{ github.token }}
+                branch: actions/version-bump
+                tags: ${{ env.REPO }}:latest,${{ env.REPO }}:v${{ steps.gitversion.outputs.fullSemVer }}
+                force: true
+                
+            - name: Update or Create PR 'dev ← actions/version-bump'
+              uses: peter-evans/create-pull-request@v6.1.0
+              with:
+                branch: actions/version-bump
+                base: dev
+                title: "🤖 Version Bump"
+                body: "Automated version bump to v${{ steps.gitversion.outputs.fullSemVer }}"
+                labels: Version Bump
+              

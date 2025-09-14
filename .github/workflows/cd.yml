@@ -1,0 +1,93 @@
+name: Deployment
+
+on: 
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**/*'
+      - 'submodules/**/*'
+    types: [closed]
+    
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+concurrency:
+  group: versioned-release
+  cancel-in-progress: true
+
+jobs:
+    build-release:
+        name: Build Release
+        runs-on: windows-latest
+        # Only run on merged PRs. Ignore tag pushes.
+        if: ${{ github.event.pull_request.merged && !startsWith(github.ref, 'refs/tags/') }}
+        steps:
+            - name: Install MSBuild Tools
+              uses: microsoft/setup-msbuild@v2
+              
+            - name: Install NuGet
+              uses: nuget/setup-nuget@v2
+              with:
+                nuget-api-key: ${{ secrets.NuGetAPIKey }}
+                nuget-version: '5.x'
+                
+            - name: Checkout
+              uses: actions/checkout@v4.1.7
+              with:
+                submodules: 'true'
+                fetch-depth: 0
+             
+            # Required to find output module BHM without glob pattern.
+            - name: Get module *.csproj name
+              id: get_csproj
+              working-directory: ./src
+              shell: pwsh
+              run: echo "name=$((Get-ChildItem $dir -File '*.csproj').Basename)" >> $env:GITHUB_OUTPUT
+            
+            # Used as prefix in module BHM naming scheme.
+            - name: Get manifest namespace
+              id: get_namespace
+              uses: notiz-dev/github-action-json-property@v0.2.0
+              with: 
+                path: 'src/manifest.json'
+                prop_path: 'namespace'
+
+            - name: Get manifest version
+              id: get_version
+              uses: notiz-dev/github-action-json-property@v0.2.0
+              with: 
+                path: 'src/manifest.json'
+                prop_path: 'version'
+                
+            # 'msbuild restore' does not support NuGet package.config format
+            - name: Restore NuGet packages
+              working-directory: ./src
+              shell: pwsh
+              run: nuget restore
+            
+            - name: Build Solution
+              working-directory: ./src
+              shell: pwsh
+              run: msbuild -p:Configuration=Release -p:VERSIONED_BUILD=${{ steps.get_version.outputs.prop }} -property:OutputPath=bin/Release
+                
+            - name: Create Release Draft
+              id: release-drafter
+              uses: release-drafter/release-drafter@v6.0.0
+              with:
+                version: ${{ steps.get_version.outputs.prop }}
+                tag: 'v${{ steps.get_version.outputs.prop }}'
+                # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+                # with:
+                #   config-name: my-config.yml
+                #   disable-autolabeler: true
+                
+            - name: Upload Module to Draft
+              uses: shogo82148/actions-upload-release-asset@v1.7.5
+              with:
+                upload_url: ${{ steps.release-drafter.outputs.upload_url }}
+                asset_path: src/bin/Release/${{ steps.get_csproj.outputs.name }}.bhm
+                # Rename the module BHM to release naming scheme.
+                asset_name: '${{ steps.get_namespace.outputs.prop }}-${{ steps.get_version.outputs.prop }}.bhm'
+                asset_content_type: 'application/zip'
+                overwrite: true

@@ -1,0 +1,6 @@
+[submodule "submodules/bhud-extended"]
+	path = submodules/bhud-extended
+	url = https://github.com/agaertner/bhud-extended.git
+[submodule "submodules/litedb"]
+	path = submodules/litedb
+	url = https://github.com/litedb-org/LiteDB.git
