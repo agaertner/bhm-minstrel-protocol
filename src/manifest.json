@@ -1,10 +1,9 @@
 {
   "name": "Minstrel Protocol",
-  "version": "0.8.5",
+  "version": "0.1.7",
   "namespace": "Nekres.Musician_Module",
   "package": "Musician Module.dll",
   "manifest_version": 1,
-
   "description": "Create, share and play sheet music.",
   "url": "https://github.com/agaertner/bhm-minstrel-protocol",
   "dependencies": {
@@ -16,6 +15,8 @@
       "username": "Nekres.1943"
     }
   ],
-  "directories": [ "musician" ],
+  "directories": [
+    "musician"
+  ],
   "enabled_without_gw2": false
 }
